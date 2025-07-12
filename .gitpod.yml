@@ -1,6 +1,3 @@
-init:
-  - chmod +x start.sh
+tasks: - name: Start Nexus CLI Nodes command: | chmod +x start.sh
+      ./start.sh
 
-tasks:
-  - name: Start Nexus CLI Nodes
-    command: ./start.sh
