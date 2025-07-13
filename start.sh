@@ -8,8 +8,7 @@ echo "Installing required packages..."
 sudo apt update
 sudo apt install -y screen netcat
 
-echo "Starting keep-alive server on port 8080..."
-python3 -m http.server 8080 &
+echo -e "HTTP/1.1 200 OK\r\n\r\nKeep Alive" | nc -l -p 8080; do :; done &
 
 echo "Launching Nexus CLI nodes..."
 NODE_IDS=(
