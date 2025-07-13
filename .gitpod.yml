@@ -1,6 +1,7 @@
-image: file: .gitpod.Dockerfile tasks: - name: Setup & Start Nexus CLI 
-    init: |
-      sudo apt update && sudo apt install -y screen netcat chmod +x 
-      ./start.sh
-    command: ./start.sh
+image: file: .gitpod.Dockerfile
 
+tasks: - name: Auto-clean and start Nexus
+  CLI nodes
+    init: |
+      chmod +x start.sh pkill screen || true
+    command: ./start.sh
