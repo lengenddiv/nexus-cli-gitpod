@@ -1,3 +1,6 @@
-tasks: - name: Start Nexus CLI Nodes init: chmod +x start.sh
+image: file: .gitpod.Dockerfile tasks: - name: Setup & Start Nexus CLI 
+    init: |
+      sudo apt update && sudo apt install -y screen netcat chmod +x 
+      ./start.sh
     command: ./start.sh
 
