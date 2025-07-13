@@ -8,8 +8,8 @@ echo "Installing required packages..."
 sudo apt update
 sudo apt install -y screen netcat
 
-echo -e "HTTP/1.1 200 OK\r\n\r\nKeep Alive" | nc -l -p 8080; do :; done &
-
+# Start keep-alive server
+while echo -e "HTTP/1.1 200 OK\r\n\r\nKeep Alive" | nc -l -p 8080; do :; done &
 echo "Launching Nexus CLI nodes..."
 NODE_IDS=(
   "6633931" "6694030" "7043877" "7538118" "7377559"
