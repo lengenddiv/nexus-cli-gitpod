@@ -1,8 +1,7 @@
-image: file: .gitpod.Dockerfile
-
-
-tasks: - name: Auto-clean and start Nexus CLI nodes
-         init: |
-          chmod +x start.sh
-          pkill screen || true
-         command: ./start.sh
+tasks:
+  - name: Auto-clean and start Nexus CLI nodes
+  
+    init: |
+      chmod +x start.sh
+      pkill screen || true
+    command: ./start.sh
